@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
   }, [isRTL])
 
   const handleOpenWebsite = () => {
-    window.open("https://stckw.com", "_blank")
+    window.open("https://www.stc.com.kw/", "_blank")
   }
 
   const handleCall = () => {

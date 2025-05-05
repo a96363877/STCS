@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 *{
-  font-family: "Beiruti", sans-serif;
+  font-family: "Beiruti", sans-serif !important;
 
 }
 :root {

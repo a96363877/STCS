@@ -91,71 +91,8 @@ export default function WelcomeScreen() {
         ></div>
       </div>
 
-      {/* Mobile Menu Button - Top Left or Right based on RTL */}
-      <div className={`absolute top-6 ${isRTL ? "right-6" : "left-6"} z-20 md:hidden`}>
-        <Button
-          variant="outline"
-          size="icon"
-          className="bg-white/80 backdrop-blur-sm"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
-      </div>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 bg-white z-10 p-6 pt-20 md:hidden">
-          <div className="flex flex-col space-y-6" dir={isRTL ? "rtl" : "ltr"}>
-            <Button variant="ghost" className="justify-start" onClick={handleCall}>
-              <Phone className={`h-5 w-5 text-blue-600 ${isRTL ? "ml-2" : "mr-2"}`} />
-              {t.callUs}
-            </Button>
-            <Button variant="ghost" className="justify-start" onClick={handleEmail}>
-              <Mail className={`h-5 w-5 text-blue-600 ${isRTL ? "ml-2" : "mr-2"}`} />
-              {t.emailUs}
-            </Button>
-            <Button variant="ghost" className="justify-start" onClick={handleOpenWebsite}>
-              <ExternalLink className={`h-5 w-5 text-blue-600 ${isRTL ? "ml-2" : "mr-2"}`} />
-              {t.visitWebsite}
-            </Button>
-            <div className="border-t border-gray-200 pt-6">
-              <h3 className="font-medium mb-4">{t.followUs}</h3>
-              <div className="flex space-x-4">
-                {[
-                  { icon: Facebook, label: "Facebook" },
-                  { icon: Twitter, label: "Twitter" },
-                  { icon: Linkedin, label: "LinkedIn" },
-                  { icon: Instagram, label: "Instagram" },
-                ].map((social, index) => (
-                  <button
-                    key={index}
-                    className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-colors duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Language Selector - Top Right or Left based on RTL */}
-      <div className={`absolute top-6 ${isRTL ? "left-6" : "right-6"} z-10`}>
-        <Select value={language} onValueChange={setLanguage}>
-          <SelectTrigger className="w-[180px] bg-white/80 backdrop-blur-sm">
-            <Globe className={`h-4 w-4 ${isRTL ? "ml-2" : "mr-2"}`} />
-            <SelectValue placeholder="Select Language" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="ar">العربية</SelectItem>
-            <SelectItem value="en">English</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
+ 
+     
       {/* Main Content Card */}
       <div
         className={`max-w-3xl w-full bg-white rounded-2xl shadow-[0_20px_50px_rgba(8,112,184,0.1)] overflow-hidden transition-all duration-700 ${
@@ -164,14 +101,14 @@ export default function WelcomeScreen() {
         dir={isRTL ? "rtl" : "ltr"}
       >
         {/* Header Section with Accent Color */}
-        <div className="h-3 bg-gradient-to-r from-blue-600 to-blue-400"></div>
+        <div className="h-3 bg-gradient-to-r from-[#7424ac] to-blue-900"></div>
 
         <div className="p-6 md:p-12 flex flex-col items-center">
           {/* Logo Section */}
           <div className="relative w-28 h-28 md:w-40 md:h-40 mb-6 md:mb-8 bg-gradient-to-b from-slate-50 to-white rounded-full p-4 shadow-[inset_0_2px_10px_rgba(0,0,0,0.05)] flex items-center justify-center">
             <div className="relative w-20 h-20 md:w-32 md:h-32 transition-transform duration-500 hover:scale-105">
               <Image
-                src="/stc"
+                src="/stc-app.webp"
                 alt="STC KW Logo"
                 fill
                 className="object-contain"
@@ -186,7 +123,7 @@ export default function WelcomeScreen() {
           >
             {t.welcome}
           </h1>
-          <div className="w-12 md:w-16 h-1 bg-blue-600 mb-4 md:mb-6 rounded-full"></div>
+          <div className="w-12 md:w-16 h-1 bg-[#7424ac]  mb-4 md:mb-6 rounded-full"></div>
 
           {/* Company Description */}
           <p
@@ -210,7 +147,7 @@ export default function WelcomeScreen() {
           {/* Main Button */}
           <Button
             size={isMobile ? "default" : "lg"}
-            className={`w-full md:w-3/4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-5 md:py-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg ${isRTL ? "font-[Amiri,serif]" : ""}`}
+            className={`w-full md:w-3/4 bg-[#7424ac] hover:bg-[#7d3aa0] text-white font-medium py-5 md:py-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg ${isRTL ? "font-[Amiri,serif]" : ""}`}
             onClick={handleOpenWebsite}
           >
             <ExternalLink className={`h-5 w-5 ${isRTL ? "ml-2" : "mr-2"}`} />
